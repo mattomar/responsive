@@ -1,0 +1,207 @@
+body {
+    height: 100vh;
+    background-color: azure;
+    margin: 0;
+
+}
+
+.text {
+    max-width: 400px;
+    /* Set a maximum width to control the wrapping */
+    word-wrap: break-word;
+    /* Ensures long words are broken to fit within the container */
+    word-break: break-word;
+    /* Breaks long words if necessary */
+    overflow-wrap: break-word;
+    /* Adds additional support for word wrapping */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    /* Adds a subtle shadow around the text container */
+    margin: 20px 0;
+    /* Adds 20px margin on top and bottom, 0 margin on left and right */
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+ 
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    position: relative;
+    /* Required for pseudo-element positioning */
+    overflow: hidden;
+    /* Ensures that the pseudo-element does not cause scrollbars */
+    padding-bottom: 25px;
+}
+
+.about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0b5db6;
+    /* Blue background color */
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+    /* Creates a diagonal cut effect */
+    z-index: -1;
+    /* Ensures the pseudo-element is behind the content */
+}
+
+
+
+.img img {
+    max-width: 300px;
+    /* Adjust the width to the desired size */
+    height: auto;
+    /* Maintains the aspect ratio */
+    
+}
+
+.text h2 {
+    font-size: 2em;
+    /* Makes the heading text larger */
+    font-weight: 300;
+    /* Makes the heading text bold */
+    margin-top: 0;
+    /* Removes default margin from the top */
+    margin-bottom: 10px;
+    /* Adds space below the heading */
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    align-items: center;
+    row-gap: 10px;
+    gap: 10px;
+    margin: 40px;
+
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    /* Adjust the width of each card */
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+}
+
+.card-img {
+    height: 150px;
+    /* Height of the colored area */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 1.5em;
+    margin: 15px 0;
+}
+
+.card p {
+    padding: 0 15px;
+    color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-left img {
+    max-width: 300px;
+    /* Adjust as needed */
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-right h3 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+}
+
+.footer-right p {
+    margin: 5px 0;
+}
+
+@media (max-width: 480px) {
+
+    .about {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ 
+    
+    }
+
+    .img img {
+        display: block;
+        margin: 0 auto; /* Centers the image */
+        max-width: 250px;
+
+     }
+    .text {
+        font-size: 0.9em; /* Slightly smaller font size for better fit */
+        padding: 10px;
+        margin: 5px 0;
+ 
+    }
+ 
+    .card {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .card-img {
+        height: 120px; /* Adjusted height for smaller screens */
+        font-size: 1em; /* Smaller font size */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-left {
+        margin-bottom: 10px;
+    }
+
+    .footer-right {
+        text-align: center;
+    }
+
+    .footer-left img {
+        max-width: 130px;
+        /* Adjust as needed */
+    }
+}
